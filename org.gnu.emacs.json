@@ -197,7 +197,8 @@
             "sources": [
                 {
 		    "type": "git",
-                    "url": "git://git.savannah.gnu.org/emacs.git"
+                    "url": "git://git.savannah.gnu.org/emacs.git",
+                    "tag": "emacs-29.1"
                 },
                 {
                     "type": "patch",
