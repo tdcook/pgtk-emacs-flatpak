@@ -219,7 +219,7 @@
                 "/share/icons/hicolor/scalable/mimetypes/emacs-document23.svg"
             ]
         },
-		{
+	{
             "name": "podman-wrapper",
             "buildsystem": "simple",
             "build-commands": [
@@ -240,6 +240,38 @@
 			    "type": "git",
 			    "url": "https://github.com/fejfighter/breakout.git",
 			    "branch": "main"
+			}
+		    ]
+		}
+	    ]
+	},
+	{
+	    "name": "epdfinfo",
+	    "buildsystem": "simple",
+	    "build-commands": [
+		"./server/autobuild -i $FLATPAK_DEST/bin"
+	    ],
+	    "sources": [
+		{
+		    "type": "git",
+		    "url": "https://github.com/vedang/pdf-tools.git",
+		    "tag": "v1.1.0"
+		}
+	    ],
+	    "modules": [
+		{
+		    "name": "poppler",
+		    "buildsystem": "cmake",
+		    "config-opts": [
+			"-DENABLE_QT5=OFF",
+			"-DENABLE_QT6=OFF",
+			"-DENABLE_BOOST=OFF"
+		    ],
+		    "sources": [
+			{
+			    "type": "git",
+			    "url": "https://anongit.freedesktop.org/git/poppler/poppler.git",
+			    "tag": "poppler-23.11.0"
 			}
 		    ]
 		}
